@@ -4,13 +4,13 @@
 
   #define configs_h
 
-  #define POLISH_POTATO
+  #define POLISH_POTATO //What is this -_-?
 
   //// BOARD TARGETS
   //#define MARAUDER_M5STICKC
   //#define MARAUDER_MINI
   //#define MARAUDER_V4
-  #define ESP32_CYD
+  #define ESP32_CYD //Custom board definition by DanhHien
   //#define MARAUDER_V6
   //#define MARAUDER_V6_1
   //#define MARAUDER_V7
