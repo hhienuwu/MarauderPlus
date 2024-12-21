@@ -55,7 +55,7 @@ extern "C" {
           };
           
           // Get random index between 0 and 11 (since we have 11 names)
-          int randomIndex = random(0, 12);
+          int randomIndex = random(0, 11);
           const char* Name = names[randomIndex];
           
           uint8_t name_len = strlen(Name);
