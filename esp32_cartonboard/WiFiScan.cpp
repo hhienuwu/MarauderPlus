@@ -2304,20 +2304,20 @@ void WiFiScan::executeSpoofAirtag() {
         // Do this because ESP32 BT addr is Base MAC + 2
         
         this->setBaseMacAddress(macAddr);
-
+        delay(5);
         NimBLEDevice::init("");
-
+        delay(5);
         NimBLEServer *pServer = NimBLEDevice::createServer();
-
+        delay(5);
         pAdvertising = pServer->getAdvertising();
-
+        delay(20);
         //NimBLEAdvertisementData advertisementData = getSwiftAdvertisementData();
         NimBLEAdvertisementData advertisementData = this->GetUniversalAdvertisementData(Airtag);
         pAdvertising->setAdvertisementData(advertisementData);
         pAdvertising->start();
-        delay(10);
+        delay(1000);
         pAdvertising->stop();
-
+        delay(5);
         NimBLEDevice::deinit();
 
         break;
@@ -2330,24 +2330,24 @@ void WiFiScan::executeSwiftpairSpam(EBLEPayloadType type) {
   #ifdef HAS_BT
     uint8_t macAddr[6];
     generateRandomMac(macAddr);
-
+    delay(5);
     //esp_base_mac_addr_set(macAddr);
 
     this->setBaseMacAddress(macAddr);
-
+    delay(5);
     NimBLEDevice::init("");
-
+    delay(5);
     NimBLEServer *pServer = NimBLEDevice::createServer();
-
+    delay(5);
     pAdvertising = pServer->getAdvertising();
-
+    delay(20);
     //NimBLEAdvertisementData advertisementData = getSwiftAdvertisementData();
     NimBLEAdvertisementData advertisementData = this->GetUniversalAdvertisementData(type);
     pAdvertising->setAdvertisementData(advertisementData);
     pAdvertising->start();
-    delay(10);
+    delay(1000);
     pAdvertising->stop();
-
+    delay(5);
     NimBLEDevice::deinit();
   #endif
 }
